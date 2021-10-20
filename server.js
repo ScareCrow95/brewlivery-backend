@@ -8,14 +8,14 @@ import verboseLogging from './utils/verboseLogging'
 async function startup() {
   const server = http.Server(api)
   startSocketIO(server)
-  await mongoose
-    .connect(process.env.MONGODB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+  // await mongoose
+  //   .connect(process.env.MONGODB, {
+  //     useNewUrlParser: true,
+  //     useUnifiedTopology: true,
+  //   })
+  //   .catch((err) => {
+  //     console.log(err)
+  //   })
   server.listen(process.env.PORT, async () => {
     // if (process.env.NODE_ENV !== 'production') verboseLogging()
   })
